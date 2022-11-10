@@ -1,4 +1,25 @@
 {% extends "template_base.html"%}
 {% block content %}
-{% include "coberta.html"%}   
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-8">
+            <div class="container">
+                <div class="row p-5 text-center">
+                    <h1>Pista Coberta</h1>
+                </div>
+            </div>
+            {% include "coberta.html"%}
+            <div class="container">
+                <div class="row p-5 text-center">
+                    <h1>Pista Exterior</h1>
+                </div>
+            </div>
+            {% include "exterior.html"%}
+        </div>
+        <div class="col-sm-2">
+        </div>
+    </div>
+</div>
 {% endblock %}
