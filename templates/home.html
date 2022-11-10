@@ -1,0 +1,64 @@
+{% extends "template_base.html"%}
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% if error is defined %}
+        
+        <div class="alert alert-danger m-5" role="alert">
+            {{ error }} 
+          </div>
+        
+        {% endif %}
+        {% if success is defined %}
+        
+        <div class="alert alert-success m-5" role="alert">
+            {{ success }} 
+          </div>
+        
+        {% endif %}
+        <p>{% print(disponibilitat) %}</p>
+
+
+        <form action="/" method="POST">
+            <div class="col-sm-4">
+                <legend>Reserva de Pista</legend>
+                <div class="mb-3">
+                    <label for="disabledSelect" class="form-label">Dia de la setmana:</label>
+                    <select id="disabledSelect" class="form-select" name="dia">
+
+                        {% for dia in dies_hores[0] %}
+
+                        <option value="{{ dia }}">{{ dia }}</option>
+
+                        {% endfor %}
+
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="disabledSelect" class="form-label">Hora de Reserva</label>
+                    <select id="disabledSelect" class="form-select" name="hora">
+                        {% set count = namespace(value=0) %}
+
+                        {% for hora in dies_hores[1] %}
+
+
+                        <option value="{{ count.value }}">{{ hora }}</option>
+                        {% set count.value = count.value + 1 %}
+
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
+                        <label class="form-check-label" for="disabledFieldsetCheck">
+                            Can't check this
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

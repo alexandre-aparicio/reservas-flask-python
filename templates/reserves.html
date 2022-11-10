@@ -1,0 +1,8 @@
+{% extends "template_base.html"%}
+{% block content %}
+{% for dia in disponibilitat['coberta']['Dilluns'] %}
+                        
+                        <p>{{ dia }}</p>
+
+                        {% endfor %}
+{% endblock %}
