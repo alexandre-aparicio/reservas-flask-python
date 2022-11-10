@@ -10,7 +10,6 @@ dies_hores = [
     		]
 
 error_ple = "Aquesta hora ja està reservada"
-
 correcto = "S'hora s'ha reservat amb èxit"
 
 global disponibilitat
@@ -18,19 +17,19 @@ global disponibilitat
 disponibilitat = {
 	"coberta":
 		{
-		"Dilluns": ["","","","","",""],
-		"Dimarts": ["","","","","",""],
-		"Dimecres": ["","","","","",""],
-		"Dijous": ["","","","","",""],
-		"Divendres": ["","","","","",""]
+		"Dilluns": [{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""}],
+		"Dimarts": [{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""}],
+		"Dimecres": [{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""}],
+		"Dijous": [{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""}],
+		"Divendres": [{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""}],
 		},
 	"exterior":
 		{
-		"Dilluns": ["","","","","",""],
-		"Dimarts": ["","","","","",""],
-		"Dimecres": ["","","","","",""],
-		"Dijous": ["","","","","",""],
-		"Divendres": ["","","","","",""]
+		"Dilluns": [{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""}],
+		"Dimarts": [{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""}],
+		"Dimecres": [{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""}],
+		"Dijous": [{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""}],
+		"Divendres": [{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""}],
 		}
 }
 
@@ -43,17 +42,19 @@ def index():
 			dia = request.form['dia']
 			hora = request.form['hora']
 			hora = int(hora)
-			a = 1
-			b = 2
+			instalacio = request.form['instalacio']	
+			nom = request.form['nom']	
+			telefon = request.form['telefon']			
 
-			if disponibilitat['coberta'][dia][hora] == "":
-				disponibilitat['coberta'][dia][hora] = "NUEVO"
+			if disponibilitat['coberta'][dia][hora]["disponibilitat"] == "":
+
+				disponibilitat[instalacio][dia][hora]["disponibilitat"]  = "RESERVAT"
+				disponibilitat[instalacio][dia][hora]["nom"]  = nom
+				disponibilitat[instalacio][dia][hora]["telefon"]  = telefon
 				return render_template('home.html', dies_hores=dies_hores, dia = dia, hora = hora,disponibilitat = disponibilitat, success = correcto )	
+
 			else:
 				return render_template('home.html', dies_hores=dies_hores, error = error_ple)
-
-			
-
 			
 	else:  	
 			session['varInterna']=1
@@ -64,7 +65,7 @@ def index():
 @app.route('/reserves')
 def reserves():
 	
-    return render_template("reserves.html",disponibilitat = disponibilitat)
+    return render_template("reserves.html",disponibilitat = disponibilitat, dies_hores = dies_hores)
 	
 
 

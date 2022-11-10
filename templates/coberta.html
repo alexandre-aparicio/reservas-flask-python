@@ -1,0 +1,101 @@
+<style>
+    .altura {
+    height: 80px;
+    border: solid 1px grey;
+    }
+
+    .enunciats {
+    height: 70px;
+    
+    }
+
+    .enunciats_h {
+    height: 90px;
+    
+    }
+
+    .reservats {
+    background-color: rgb(185, 44, 255);
+    color: aliceblue;
+    
+    }
+
+    .lliure {
+    background-color: rgb(226, 178, 250);
+    
+    }
+</style>
+<div class="container">
+     <div class="row">           
+        <div class="col-sm-2 "></div>        
+        {% for dia in dies_hores[0] %}
+        <div class="col-sm-2 text-center align-items-center enunciats pt-3" >
+        <p>  <strong>{{ dia }}</strong></p>  
+        </div>        
+        {% endfor %}
+        <div class="col-sm-2">
+            <div class="col-sm-12  enunciats_h text-center align-items-center enunciats pt-3"><strong>15:00</strong></div>
+            <div class="col-sm-12  enunciats_h text-center align-items-center enunciats pt-3"><strong>16:00</strong></div>
+            <div class="col-sm-12  enunciats_h text-center align-items-center enunciats pt-3"><strong>17:00</strong></div>
+            <div class="col-sm-12  enunciats_h text-center align-items-center enunciats pt-3"><strong>18:00</strong></div>
+            <div class="col-sm-12  enunciats_h text-center align-items-center enunciats pt-3"><strong>19:00</strong></div>
+            <div class="col-sm-12  enunciats_h text-center align-items-center enunciats pt-3"><strong>20:00</strong></div>
+        </div>
+        <div class="col-sm-2 ">
+            {% for dill in disponibilitat["coberta"]["Dilluns"] %}
+            {% if dill["disponibilitat"] =="RESERVAT" %}
+            {% set res = "reservats" %}
+             {% else %}
+             {% set res = "lliure" %}
+            {% endif %}
+            <div class="col-sm-12  mb-2 altura {{ res }}">{{ dill["nom"] }}</div>
+            {% endfor %}
+        </div>
+        <div class="col-sm-2 ">
+
+            {% for dima in disponibilitat["coberta"]["Dimarts"] %}
+            {% if dima["disponibilitat"] =="RESERVAT" %}
+            {% set res = "reservats" %}
+             {% else %}
+             {% set res = "lliure" %}
+            {% endif %}
+            <div class="col-sm-12  mb-2 altura {{ res }}">
+                {{ dima["nom"] }}</div>
+            {% endfor %}
+        </div>
+        <div class="col-sm-2 ">
+            {% for dime in disponibilitat["coberta"]["Dimecres"] %}
+            
+            {% if dime["disponibilitat"] =="RESERVAT" %}
+            {% set res = "reservats" %}
+             {% else %}
+             {% set res = "lliure" %}
+            {% endif %}
+            <div class="col-sm-12  mb-2 altura {{ res }}">{{ dime["nom"] }}</div>
+            {% endfor %}
+        </div>
+        <div class="col-sm-2 ">
+            {% for dij in disponibilitat["coberta"]["Dijous"] %}
+            
+            {% if dij["disponibilitat"] =="RESERVAT" %}
+            {% set res = "reservats" %}
+             {% else %}
+             {% set res = "lliure" %}
+            {% endif %}
+            <div class="col-sm-12  mb-2 altura {{ res }}">{{ dij["nom"] }}</div>
+            {% endfor %}
+        </div>
+        <div class="col-sm-2 ">
+            {% for div in disponibilitat["coberta"]["Divendres"] %}
+           
+            {% if div["disponibilitat"] =="RESERVAT" %}
+            {% set res = "reservats" %}
+             {% else %}
+             {% set res = "lliure" %}
+            {% endif %}
+            <div class="col-sm-12  mb-2 altura {{ res }}">{{ div["nom"] }}</div>
+            {% endfor %}
+        </div>        
+        
+     </div>
+    </div>   
