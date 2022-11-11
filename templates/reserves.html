@@ -44,7 +44,7 @@
                             <div class="col-sm-8">
                                 <div class="container">
                                     <div class="row p-5 text-center">
-                                        <h1>Pista Coberta</h1>
+                                        <h1>Pista Exterior</h1>
                                     </div>
                                 </div>
                                 {% include "exterior.html"%}
@@ -54,7 +54,97 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane container fade" id="set">This is a setting tab.</div>
+                <div class="tab-pane container fade" id="set">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-2">
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="container">
+                                    <div class="row p-5 text-center">
+                                        <h1>Detall Reserves Pista Coberta</h1>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">  
+                                    
+                                {% set i = 0 %}
+                                {% set M = 5 %}
+                                {% set hores = ["15:00","16:00","17:00","18:00","19:00","20:00"] %}
+
+                                {% for disp in disponibilitat["coberta"] %}                              
+                                {% for i in range(0, M+1) %}
+                                {% if 'RESERVAT' in disponibilitat["coberta"][disp][i]["disponibilitat"] %}                        
+                                
+                                <table class="table table-bordered table-sm">
+                                    <tbody>
+                                      <tr>
+                                        <td>Dia</td>
+                                        <th scope="row"><p>{{ disp }}</p>   </th>       
+                                        <td>Hora</td>
+                                        <th scope="row">{{ hores[i] }}</th>
+                                        <td>Tipus</td>
+                                        <th scope="row">Pista Coberta</th>
+                                      </tr>
+                                      <tr>
+                                        <td>Usuari</td>
+                                        <th scope="row" colspan="3">{{ disponibilitat["coberta"][disp][i]["nom"] }}</th> 
+                                         <td>Telefon</td>
+                                        <th scope="row">{{ disponibilitat["coberta"][disp][i]["telefon"] }}</th>       
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                {% endif %}
+                                {% endfor %}                          
+                                {% endfor %}           
+                            </div>
+                            </div>
+                            <div class="col-sm-2">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="container">
+                                    <div class="row p-5 text-center">
+                                        <h1>Detall Reserves Pista Esterior</h1>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12"> 
+                                    
+                                    {% for ext in disponibilitat["exterior"] %}    
+                                    {% for i in range(0, M+1) %}    
+                                    {% if 'RESERVAT' in disponibilitat["exterior"][ext][i]["disponibilitat"] %}                        
+                                    
+                                    <table class="table table-bordered table-sm">
+                                        <tbody>
+                                          <tr>
+                                            <td>Dia</td>
+                                            <th scope="row"><p>{{ ext }}</p>   </th>       
+                                            <td>Hora</td>
+                                            <th scope="row">{{ hores[i] }}</th>
+                                            <td>Tipus</td>
+                                            <th scope="row">Pista Exterior</th>
+                                          </tr>
+                                          <tr>
+                                            <td>Usuari</td>
+                                            <th scope="row" colspan="3">{{ disponibilitat["exterior"][ext][i]["nom"] }}</th> 
+                                             <td>Telefon</td>
+                                            <th scope="row">{{ disponibilitat["exterior"][ext][i]["telefon"] }}</th>       
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    {% endif %}
+                                    {% endfor %}                          
+                                    {% endfor %}           
+                                </div>
+                                
+                            </div>
+                            <div class="col-sm-2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

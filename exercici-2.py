@@ -17,7 +17,14 @@ global disponibilitat
 disponibilitat = {
 	"coberta":
 		{
-		"Dilluns": [{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""}],
+		"Dilluns": [
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""}
+			],
 		"Dimarts": [{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""}],
 		"Dimecres": [{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""}],
 		"Dijous": [{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""}],
@@ -32,7 +39,6 @@ disponibilitat = {
 		"Divendres": [{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""}],
 		}
 }
-
 
 @app.route('/',methods = ['POST', 'GET'])
 def index():
