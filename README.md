@@ -6,4 +6,6 @@ Exercici 2 amb Python per DWES2
     - request
     - session
 
-- S'utilitza la darrera versió de Bootstrap, la 5.0    
+- S'utilitza la darrera versió de Bootstrap, la 5.0   
+
+- JQuery per validar els formularis 

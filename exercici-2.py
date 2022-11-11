@@ -46,7 +46,7 @@ def index():
 			nom = request.form['nom']	
 			telefon = request.form['telefon']			
 
-			if disponibilitat['coberta'][dia][hora]["disponibilitat"] == "":
+			if disponibilitat[instalacio][dia][hora]["disponibilitat"] == "":
 
 				disponibilitat[instalacio][dia][hora]["disponibilitat"]  = "RESERVAT"
 				disponibilitat[instalacio][dia][hora]["nom"]  = nom

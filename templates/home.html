@@ -1,7 +1,7 @@
 {% extends "template_base.html"%}
 {% block content %}
 <div class="container">
-    <form action="/" method="POST">
+    <form action="/" method="POST" name='reservas'>
         <div class="row">
             {% if error is defined %}
             <div class="alert alert-danger m-5" role="alert">
@@ -50,11 +50,11 @@
                 <legend>Dades Personals</legend>
                 <div class="mb-3">
                     <label for="nom" class="form-label">Nom Complet</label>
-                    <input type="text" class="form-control" name="nom">
+                    <input type="text" class="form-control" name="nom" id="nom">
                 </div>
                 <div class="mb-3">
                     <label for="telefon" class="form-label">Telèfon</label>
-                    <input type="text" class="form-control" name="telefon">
+                    <input type="text" class="form-control" name="telefon" id="telefon">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -62,3 +62,4 @@
 </div>
 </div>
 {% endblock %}
+

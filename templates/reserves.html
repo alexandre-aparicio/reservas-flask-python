@@ -2,24 +2,62 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-sm-2">
-        </div>
-        <div class="col-sm-8">
-            <div class="container">
-                <div class="row p-5 text-center">
-                    <h1>Pista Coberta</h1>
+        <div class="container" style="margin-top: 10px;">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#msg">Calendari Pista Coberta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#pro">Calendari Pista Exterior</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="tab" href="#set">Detall de Reserves</a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane container active" id="msg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-2">
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="container">
+                                    <div class="row p-5 text-center">
+                                        <h1>Pista Coberta</h1>
+                                    </div>
+                                </div>
+                                {% include "coberta.html"%}
+
+                            </div>
+                            <div class="col-sm-2">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            {% include "coberta.html"%}
-            <div class="container">
-                <div class="row p-5 text-center">
-                    <h1>Pista Exterior</h1>
+                <div class="tab-pane container fade" id="pro">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-2">
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="container">
+                                    <div class="row p-5 text-center">
+                                        <h1>Pista Coberta</h1>
+                                    </div>
+                                </div>
+                                {% include "exterior.html"%}
+                            </div>
+                            <div class="col-sm-2">
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="tab-pane container fade" id="set">This is a setting tab.</div>
             </div>
-            {% include "exterior.html"%}
         </div>
-        <div class="col-sm-2">
-        </div>
+
     </div>
 </div>
 {% endblock %}
