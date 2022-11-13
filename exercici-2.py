@@ -25,10 +25,38 @@ disponibilitat = {
 			{'disponibilitat':"","nom":"", "telefon":""},
 			{'disponibilitat':"","nom":"", "telefon":""}
 			],
-		"Dimarts": [{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""}],
-		"Dimecres": [{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""}],
-		"Dijous": [{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""}],
-		"Divendres": [{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""},{'disponibilitat':"","nom":"", "telefon":""}],
+		"Dimarts": [
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""}
+			],
+		"Dimecres": [
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""}
+			],
+		"Dijous": [
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""}
+			],
+		"Divendres": [
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""},
+			{'disponibilitat':"","nom":"", "telefon":""}
+			]
 		},
 	"exterior":
 		{
