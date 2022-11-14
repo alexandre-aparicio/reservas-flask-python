@@ -1,6 +1,10 @@
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://python.aleaparicio.es/reservas-flask-python/public/laravel-logolockup-cmyk-red-svg.png" width="400" alt="Laravel Logo"></a></p>
+
 ## Descripció
 
-Exercici 2 amb Python per DWES2
+Exercici 2 amb Python per DWES
+
+Es tracta de crear una petita aplicació que pugui fer reserves de dues instalacions esportives, una interior y una exterior. Es fa mitjançant un Diciconari global que va enmagazenant les dades de si está o no reservada per un determinat día i hora.
 
 ## Elements que s'han emprat
 
@@ -17,4 +21,4 @@ Exercici 2 amb Python per DWES2
 
 ## Veure l'exercici en funcionament
 
-Live Preview[Anar-hi](https://python.aleaparicio.es/reservas-flask-python)
+Live Preview: [Anar-hi](https://python.aleaparicio.es/reservas-flask-python)
