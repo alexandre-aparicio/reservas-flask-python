@@ -60,12 +60,16 @@
                   </div>
                 </div>
                 <div class="col-sm-12">
+                    
                   {% set i = 0 %} 
                   {% set M = 5 %} 
                   {% set hores =["15:00","16:00","17:00","18:00","19:00","20:00"] %} 
 
-                  {% for disp in disponibilitat["coberta"] %} {% for i in range(0, M+1)%} 
+                  {% for disp in disponibilitat["coberta"] %} {% for i in range(0, M+1)%}
+                  
+                 
                   {% if 'RESERVAT' in  disponibilitat["coberta"][disp][i]["disponibilitat"] %}
+                  
                   <table class="table table-bordered table-sm">
                     <tbody>
                       <tr>
